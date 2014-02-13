@@ -8,6 +8,14 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/1.6/ref/settings/
 """
 
+SOCIAL_AUTH_CLEF_KEY = 'fe298250ef9e293f7990c3d30d16bfbc'
+SOCIAL_AUTH_CLEF_SECRET = '6ec589ef07b4340561e1c4b8dac63003'
+
+AUTHENTICATION_BACKENDS = (
+    'social.backends.clef.ClefOAuth2',
+    'django.contrib.auth.backends.ModelBackend',
+)
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
@@ -36,6 +44,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'social.apps.django_app.default',
 )
 
 MIDDLEWARE_CLASSES = (
